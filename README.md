@@ -11,6 +11,8 @@
 ## 使用方法
 使用前请先安装nodejs环境
 
+服务端配置文件中RCONEnabled需要设置为True
+
 1.修改配置信息，如路径、周期、端口、密码等
 
 2.`npm install`
