@@ -27,3 +27,4 @@
 2.受服务端限制，rcon无法发送中文，貌似服务端是gbk编码
 
 3.rcon发送命令后，无法获取响应，但rcon客户端仍然会期待响应，这导致了虽然会报错，但服务端仍会正常接收，不影响实际使用。
+```Error sending RCON command: Error: Timeout for packet id 1```RCON超时报错不影响使用
