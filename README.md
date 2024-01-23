@@ -15,9 +15,9 @@
 
 1.修改`index.js`中顶部的配置信息，如路径、周期、端口、密码等
 
-2.`npm install`
+2.在目录命令行中运行`npm install`
 
-3.`npm start`
+3.在目录命令行中运行`npm start`
 
 ## 已知问题
 1.受服务端限制，rcon发送的文本中无法保留空格
