@@ -1,0 +1,16 @@
+{
+  "name": "palworld-rcon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rcon-client": "^4.2.4",
+    "systeminformation": "^5.21.24"
+  }
+}
