@@ -26,11 +26,11 @@ const cmd = `"C:\\Users\\kiros\\Desktop\\steamcmd\\steamapps\\common\\PalServer\
 //内存占用百分比
 const memTarget = 90
 
-//重启倒计时（秒）  理论上这个时间应该小于巡检周期
-const rebootSecond = 10
-
 //巡检周期（秒）即每次都会检查内存占用
 const checkSecond = 20
+
+//重启倒计时（秒）  理论上这个时间应该小于巡检周期  默认取周期一半时间
+const rebootSecond = checkSecond/2
 
 //服务器地址本机保持默认
 const serverHost = '127.0.0.1'
