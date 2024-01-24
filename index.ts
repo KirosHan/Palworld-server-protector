@@ -12,16 +12,36 @@ import fsExtra from 'fs-extra'; // 引入 fs-extra
 
 //游戏存档目录
 const gamedataPath: string = 'C:\\Users\\kiros\\Desktop\\steamcmd\\steamapps\\common\\PalServer\\Pal\\Saved\\SaveGames';
+
+//存档备份路径
 const backupPath: string = path.join(__dirname, 'backup');
+
+//存档备份周期
 const backupInterval: number = 1800;
+
+//监控服务端名称
 const processName: string = "Pal";
+
+//服务端启动路径
 const cmd: string = `"C:\\Users\\kiros\\Desktop\\steamcmd\\steamapps\\common\\PalServer\\PalServer.exe"`;
+
+//内存占用百分比阈值（%）
 const memTarget: number = 90;
+
+//内存监控周期（秒）
 const checkSecond: number = 20;
+
+//关服延迟（秒） 默认内存监控周期一半（不应超过内存监控周期，避免重复触发指令）
 const rebootSecond: number = checkSecond / 2;
+
+//rcon地址 默认本季
 const serverHost: string = '127.0.0.1';
+
+//rcon端口
 const serverPort: number = 25575;
-const rconPassword: string = '19920430vin';
+
+//rcon密码
+const rconPassword: string = 'admin';
 
 /************************/
 
