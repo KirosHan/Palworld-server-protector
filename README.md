@@ -30,6 +30,14 @@ UI版本，自取
 
 游戏存档备份会保存到/dist/backup中
 
+## Star and a Coffee
+
+如果这个仓库对你有用，欢迎点个Star⭐︎
+
+也可以Buy me a coffee☕︎
+
+![BuyMeACoffee](https://raw.githubusercontent.com/KirosHan/Palworld-server-protector/main/PNG/buymeacoffee.png)
+
 ## 运行逻辑
 
 ```mermaid
