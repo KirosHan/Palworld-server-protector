@@ -109,6 +109,7 @@ async function checkMemoryUsage(): Promise<number> {
         
         if (memPercentage > memTarget) {
             console.log(`负载过高，即将重启。`);
+            backupDirectory(gamedataPath, backupPath);//关服前备份一次
             await sendMsgandReboot();
         }
 
