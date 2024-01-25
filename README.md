@@ -4,6 +4,11 @@
 
 ~~希望有人可以帮我加上备份存档功能，懒了。~~  已完成
 
+# GUI版本已发布！
+
+UI版本，自取
+[https://github.com/KirosHan/Palworld-server-protector-electron](https://github.com/KirosHan/Palworld-server-protector-electron)
+
 ## 功能
 - 内存监控（自定义阈值触发）
 - 进程守护（当前如果没有服务端运行就自动重启）
