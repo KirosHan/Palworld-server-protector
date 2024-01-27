@@ -1,5 +1,5 @@
 import si from 'systeminformation';
-import { Rcon } from "rcon-client";
+// import { Rcon } from "rcon-client";
 import { exec } from 'child_process';
 import fs from 'fs';
 import archiver from 'archiver';
@@ -7,6 +7,7 @@ import path from 'path';
 import moment from 'moment';
 import fsExtra from 'fs-extra'; // 引入 fs-extra
 import ps from 'ps-node';
+import Rcon from 'rcon-srcds';
 
 /**设置区域**************/
 
@@ -46,42 +47,21 @@ const rconPassword: string = 'admin';
 /************************/
 
 
-const rcon = new Rcon({
-    host: serverHost,
-    port: serverPort,
-    password: rconPassword
-});
-
 
 async function sendMsgandReboot(): Promise<void> {
     try {
-        await rcon.connect();
-        console.log(`[${moment().format('HH:mm:ss')}] Connected to the server!`);
-        await rcon.send(`Shutdown ${rebootSecond} The_server_will_restart_in_${rebootSecond}_seconds.`);
-        console.log(`[${moment().format('HH:mm:ss')}] Command sent, not waiting for response`);
+        const server = new Rcon({ host: serverHost, port: serverPort ,encoding: 'ascii'});
+        await server.authenticate(rconPassword);
+        console.log(`[${moment().format('HH:mm:ss')}] Rcon authenticated`);
+        let status = await server.execute(`Shutdown ${rebootSecond} The_server_will_restart_in_${rebootSecond}_seconds.`); 
+        console.log(`[${moment().format('HH:mm:ss')}] ${status}`)
+        server.execute('mp_autokick 0'); // no need to read the response
+
     } catch (error) {
         console.error(`[${moment().format('HH:mm:ss')}] Error sending RCON command:`, error);
-    } finally {
-        rcon.end();
-    }
+    } 
 }
 
-// function check(): void {
-//     checkMemoryUsage();
-//     exec(`tasklist`, (err: Error | null, stdout: string, stderr: string) => {
-//         if (err) {
-//             console.error(`[${moment().format('HH:mm:ss')}] Error executing tasklist: ${err}`);
-//             return;
-//         }
-
-//         if (stdout.toLowerCase().indexOf(processName.toLowerCase()) === -1) {
-//             console.log(`[${moment().format('HH:mm:ss')}] ${processName} is not running. Attempting to start.`);
-//             startProcess();
-//         } else {
-//             console.log(`[${moment().format('HH:mm:ss')}] ${processName} is already running.`);
-//         }
-//     });
-// }
 
 
 
@@ -199,3 +179,5 @@ setInterval(checkServerStatus, checkSecond*1000);
 setInterval(() => {
     backupDirectory(gamedataPath, backupPath);
 }, backupInterval*1000);
+
+
