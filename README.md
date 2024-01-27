@@ -7,7 +7,9 @@
 # GUI版本已发布！
 
 UI版本，自取
-[https://github.com/KirosHan/Palworld-server-protector-electron](https://github.com/KirosHan/Palworld-server-protector-electron)
+[https://github.com/KirosHan/Palworld-server-protector-DotNet](https://github.com/KirosHan/Palworld-server-protector-DotNet)
+
+![预览](https://raw.githubusercontent.com/KirosHan/Palworld-server-protector-DotNet/main/PNG/screen.png)
 
 ## 功能
 - 内存监控（自定义阈值触发）
